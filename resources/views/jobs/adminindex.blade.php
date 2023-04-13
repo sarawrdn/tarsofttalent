@@ -7,7 +7,7 @@
                 <div class="card-header">{{ __('Job List') }}
                 @auth
                     @if(auth()->user()->type=='admin')
-                        <a href="{{route('admin.jobs.create')}}" class="btn btn-primary"> Add New Job </a>
+                        <a href="{{route('admin.jobs.create')}}" class="btn btn-primary"> + Create New Job </a>
                     @endif
                 @endauth
                 </div>

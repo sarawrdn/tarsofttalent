@@ -49,8 +49,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::post('/profile/store', [ProfileController::class, 'store'])->name('user.profile.store');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('user.profile.edit');
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('user.profile.update');
-
-
+    
 });
   
 /*------------------------------------------

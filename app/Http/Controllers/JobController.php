@@ -38,7 +38,7 @@ class JobController extends Controller
     {
         $job = Job::create($request->all());
 
-        return redirect()->route('admin.jobs.index');
+        return redirect()->route('admin.jobs.index')->with(['alert-type' => 'alert-primary', 'alert' => 'Job has been created!']);
     }
 
     /**
@@ -69,7 +69,7 @@ class JobController extends Controller
     {
         $job->update($request->all());
 
-        return redirect()->route('admin.jobs.index');
+        return redirect()->route('admin.jobs.index')->with(['alert-type' => 'alert-primary', 'alert' => 'Job has been updated!']);
     }
 
     /**
@@ -79,6 +79,6 @@ class JobController extends Controller
     {
         $job->delete();
 
-        return redirect()->route('admin.jobs.index');
+        return redirect()->route('admin.jobs.index')->with(['alert-type' => 'alert-primary', 'alert' => 'Job has been deleted!']);
     }
 }

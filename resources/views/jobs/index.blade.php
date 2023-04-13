@@ -36,7 +36,7 @@
 
                                         <a href="{{route ('admin.jobs.show', $job) }}"><i class="bi bi-eye text-primary" style="font-size: 1em;"></i></a>
                                         <a href="{{route ('admin.jobs.edit', $job) }}"><i class="bi bi-pencil text-success" style="font-size: 1em;"></i><a>
-                                        <a href="{{route ('admin.jobs.delete', $job) }}"><i class="bi bi-trash text-danger" style="font-size: 1em;"></i></a>
+                                        <a href="{{route ('admin.jobs.delete', $job) }}" onclick="if(confirm('Are you sure you want to delete this job?')) {alert('Job deleted successfully!');} else {return false;}"><i class="bi bi-trash text-danger" style="font-size: 1em;"></i>
                                         </td>
 
                                     @else

@@ -40,7 +40,7 @@
                                         </td>
 
                                     @else
-                                        <td><a href="{{route ('jobs.show', $job) }}">View Details</a></td>
+                                        <td><a href="{{route ('admin.jobs.show', $job) }}">View Details</a></td>
                                     @endif
                                 @endauth
                                 

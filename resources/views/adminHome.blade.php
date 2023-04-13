@@ -16,9 +16,7 @@
 
                     {{ __('You are logged in as Admin!') }}
                     <br>
-                    <a href="/admin/jobs">View Jobs</a><br>
-                    <a href="/admin/job-applications">View Applications</a>
-                </div>
+                    
             </div>
         </div>
     </div>

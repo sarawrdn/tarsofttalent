@@ -5,18 +5,14 @@
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
-            <div class="card-body p-3">
+            <a href="/admin/jobs"><div class="card-body p-3">
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Money</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">JOBS</p>
                     <h5 class="font-weight-bolder">
-                      $53,000
+                      {{$jobCount}}
                     </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+55%</span>
-                      since yesterday
-                    </p>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -26,22 +22,19 @@
                 </div>
               </div>
             </div>
+            </a>
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
-            <div class="card-body p-3">
+            <a href="/admin/job-applications"><div class="card-body p-3">
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">APPLICATIONS</p>
                     <h5 class="font-weight-bolder">
-                      2,300
+                      {{$applyCount}}
                     </h5>
-                    <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder">+3%</span>
-                      since last week
-                    </p>
                   </div>
                 </div>
                 <div class="col-4 text-end">
@@ -51,6 +44,7 @@
                 </div>
               </div>
             </div>
+            </a>
           </div>
         </div>
       </div>

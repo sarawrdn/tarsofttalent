@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Job;
+use App\Models\JobApplication;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,8 @@ class HomeController extends Controller
 
     public function adminHome()
     {
-        return view('adminHome');
+        $jobCount = Job::count();
+        $applyCount = JobApplication::count();
+        return view('adminHome', ['jobCount' => $jobCount],['applyCount' => $applyCount]);
     }
 }

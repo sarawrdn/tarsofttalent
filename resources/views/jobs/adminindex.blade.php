@@ -12,7 +12,7 @@
                 @endauth
                 </div>
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table text-center">
                         <thead>
                             <tr>
                                 <th>Name</th>

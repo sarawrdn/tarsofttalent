@@ -6,6 +6,7 @@ use App\Models\JobApplication;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
+
 class JobApplicationController extends Controller
 {
     /**
@@ -24,10 +25,18 @@ class JobApplicationController extends Controller
 
     }
 
-    public function adminIndex()
+    public function adminIndex(Request $request)
     {
 
-        $jobApplications = JobApplication::with('job', 'profile.user')->get();
+        if($request->keyword)
+        {
+            $jobApplications = JobApplication::with('job', 'profile.user')
+                                             ->where('status','LIKE','%'.$request->keyword.'%')->paginate(3);
+        }
+
+    else {
+        $jobApplications = JobApplication::paginate(3);
+    }
 
         return view('applications.adminindex', compact('jobApplications'));
 
@@ -78,6 +87,9 @@ class JobApplicationController extends Controller
             'alert' => 'Please fill in your profile!'
         ]);
     }
+
+
+
 
     
 

@@ -7,6 +7,17 @@
             <div class="card-header pb-0">
               <h6>{{ __('Job Applications') }}</h6>
             </div>
+            <div class="float-right">
+                    <form action="" method="">
+                        <div class ="input-group">
+                            <input type="text" class="form-control" name="keyword" value="{{ request()->get('keyword')}}" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit"> Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
@@ -64,6 +75,7 @@
                     @endforeach
                   </tbody>
                 </table>
+                {{$jobApplications->links()}}
               </div>
             </div>
           </div>

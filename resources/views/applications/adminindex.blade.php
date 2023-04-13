@@ -11,7 +11,7 @@
                     <table class="table text-center">
                         <thead>
                             <tr>
-                                <th>Name of Candidate</th>
+                                <th>Applicant Name</th>
                                 <th>Name</th>
                                 <th>Date Applied</th>
                                 <th>Status</th>

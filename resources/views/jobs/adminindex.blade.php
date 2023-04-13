@@ -7,11 +7,9 @@
                 <div class="card-header">{{ __('Job List') }}
                 @auth
                     @if(auth()->user()->type=='admin')
-                    <div class="d-flex justify-content-end">
                         <a href="{{route('admin.jobs.create')}}" class="btn btn-primary"> Add New Job </a>
                     @endif
                 @endauth
-                    </div>
                 </div>
                 <div class="card-body">
                     <table class="table text-center">

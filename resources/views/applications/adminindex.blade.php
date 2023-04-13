@@ -12,7 +12,7 @@
                         <thead>
                             <tr>
                                 <th>Applicant Name</th>
-                                <th>Name</th>
+                                <th>Job Name</th>
                                 <th>Date Applied</th>
                                 <th>Status</th>
                                 <th>Details</th>

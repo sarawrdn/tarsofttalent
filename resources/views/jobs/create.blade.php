@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('List New Job') }}</div>
+                <div class="card-header">{{ __('New Job') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.jobs.store') }}" enctype="multipart/form-data">

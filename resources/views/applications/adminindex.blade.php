@@ -1,6 +1,7 @@
 @extends('admin.sidebar')
 
 @section('body')
+<<<<<<< HEAD
 <div class="row">
         <div class="col-12">
           <div class="card mb-4">
@@ -42,6 +43,35 @@
                       </td>
                       @if ($jobApplication->status == "Viewed")
                                  <td class="text-xs font-weight-bold mb-0 text-center">{{$jobApplication->interview->interview_date}}
+=======
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">{{ __('Job Applications') }}
+                </div>
+                <div class="card-body">
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Applicant Name</th>
+                                <th>Job Name</th>
+                                <th>Date Applied</th>
+                                <th>Status</th>
+                                <th>Details</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($jobApplications as $jobApplication)
+                            <tr>
+                                <td>{{ $jobApplication->profile->user->name }}</td>
+                                <td>{{$jobApplication->job->name}}</td>
+                                <td>{{$jobApplication->created_at}}</td>
+                                <td>{{$jobApplication->status}}</td>
+                                @if ($jobApplication->status == "Viewed")
+                                <td>{{$jobApplication->interview->interview_date}}
+>>>>>>> b9d5e7c3d694e6ff534edd5ec7ea7d6e9c5e92c0
                                     <br>
                                     <a href="{{$jobApplication->interview->link}}" target="_blank">{{$jobApplication->interview->link}}</a>
                                 </td>

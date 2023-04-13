@@ -13,6 +13,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!--FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -71,6 +74,20 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    @auth
+                 @if(auth()->user()->type=='admin')
+                
+                @else
+                                    <a class="dropdown-item" href="/profile">
+                                        {{ __('My Profile') }}
+                                    </a>
+                                    <a class="dropdown-item" href="/jobs-applied">
+                                        {{ __('My Job Application') }}
+                                    </a>
+                @endif
+                @endauth
+
                                 </div>
                             </li>
                         @endguest
@@ -79,7 +96,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py">
             @yield('content')
         </main>
     </div>

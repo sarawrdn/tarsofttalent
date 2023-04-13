@@ -17,4 +17,10 @@ class Job extends Model
         'description',
         'requirement',
     ];
+
+    public function jobApplications()
+    {
+        return $this->hasMany(JobApplication::class, 'job_id', 'id');
+    }
+
 }

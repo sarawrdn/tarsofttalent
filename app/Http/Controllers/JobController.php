@@ -10,10 +10,11 @@ class JobController extends Controller
     /**
      * Display a listing of the resource.
      */
+    //admin 
     public function index()
     {
         $jobs = Job::all();
-        return view('jobs.index', compact('jobs'));
+        return view('jobs.adminindex', compact('jobs'));
     }
 
     public function user_index()
@@ -27,7 +28,7 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        return view('jobs.create');
     }
 
     /**
@@ -35,7 +36,9 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $job = Job::create($request->all());
+
+        return redirect()->route('admin.jobs.index');
     }
 
     /**
@@ -43,7 +46,12 @@ class JobController extends Controller
      */
     public function show(Job $job)
     {
-        //
+        return view('jobs.show', compact ('job'));
+    }
+
+    public function showAdmin(Job $job)
+    {
+        return view('jobs.showadmin', compact ('job'));
     }
 
     /**
@@ -51,7 +59,7 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        //
+        return view('jobs.edit', compact ('job'));
     }
 
     /**
@@ -59,7 +67,9 @@ class JobController extends Controller
      */
     public function update(Request $request, Job $job)
     {
-        //
+        $job->update($request->all());
+
+        return redirect()->route('admin.jobs.index');
     }
 
     /**
@@ -67,6 +77,8 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        $job->delete();
+
+        return redirect()->route('admin.jobs.index');
     }
 }

@@ -1,7 +1,6 @@
 @extends('admin.sidebar')
 
 @section('body')
-<<<<<<< HEAD
 <div class="container-fluid py-4">
       <div class="row">
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -26,24 +25,6 @@
                   </div>
                 </div>
               </div>
-=======
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in as Admin!') }}
-                    <br>
-                    
->>>>>>> b9d5e7c3d694e6ff534edd5ec7ea7d6e9c5e92c0
             </div>
           </div>
         </div>

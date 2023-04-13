@@ -30,8 +30,13 @@ class JobApplicationController extends Controller
 
         if($request->keyword)
         {
+            $keyword = $request->keyword;
+
             $jobApplications = JobApplication::with('job', 'profile.user')
-                                             ->where('status','LIKE','%'.$request->keyword.'%')->paginate(3);
+                                ->whereHas('profile.user', function ($query) use ($keyword) {
+                                    $query->where('name', 'LIKE', '%' . $keyword . '%');
+                                })
+                                ->paginate(3);
         }
 
     else {

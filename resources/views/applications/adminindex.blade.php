@@ -6,18 +6,15 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>{{ __('Job Applications') }}</h6>
-            </div>
-            <div class="float-right">
                     <form action="" method="">
-                        <div class ="input-group">
-                            <input type="text" class="form-control" name="keyword" value="{{ request()->get('keyword')}}" placeholder="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit"> Search</button>
+                            <div class="col-md-10">
+                            <input style="text-align:left;float:left;" type="text" class="form-control" name="keyword" value="{{ request()->get('keyword')}}" placeholder="Search by name">
                             </div>
-                        </div>
+                            <div>
+                               <button class="btn btn-primary" style="text-align:right;float:right;" type="submit"> Search</button>
+                            </div>
                     </form>
-                </div>
-            
+            </div>            
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">

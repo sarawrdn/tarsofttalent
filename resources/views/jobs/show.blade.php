@@ -36,7 +36,7 @@
                         @if(auth()->user()->type=='user')
                     <div class="text-center">
                         <a href="{{route ('jobs.apply', $job) }}">
-                        <button type="submit" class="btn btn-primary">Apply Here</button>
+                        <button type="submit" class="btn btn-primary">Apply Now</button>
                         </a>
                     </div>
                         @endif

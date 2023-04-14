@@ -80,7 +80,7 @@
               <hr class="horizontal dark">
               <p class="text-uppercase text-sm">JOB APPLICATION</p>
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                   <div class="form-group">
                     <label for="example-text-input" class="form-control-label">Job Title</label>
                     <input class="form-control" type="text" value="{{ $jobApplication->job->name }}" style="background-color: #fff;" disabled>

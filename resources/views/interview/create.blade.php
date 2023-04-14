@@ -12,7 +12,7 @@
                         @csrf
                         <div class="form-group">
                             <label>Date Of Interview:</label>
-                            <input type="date" class="form-control" name="interview_date" placeholder="Enter Date of Interview" >
+                            <input type="datetime-local" class="form-control" name="interview_date" placeholder="Enter Date of Interview" >
                         </div>
                         <div class="form-group">
                             <label>Link:</label>

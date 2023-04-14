@@ -6,14 +6,25 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>{{ __('Job Applications') }}</h6>
-                    <form action="" method="">
-                            <div class="col-md-10">
-                            <input style="text-align:left;float:left;" type="text" class="form-control" name="keyword" value="{{ request()->get('keyword')}}" placeholder="Search by name">
-                            </div>
-                            <div>
-                               <button class="btn btn-primary" style="text-align:right;float:right;" type="submit"> Search</button>
-                            </div>
-                    </form>
+              <div class="d-flex justify-content-end">
+              <form
+              class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"
+              method="GET"
+              action = "{{ route ('admin.jobs.applications')}}"
+              >
+                <div class="input-group">
+                  <input 
+                    class="form-control"
+                    type="text" placeholder="Search for..."
+                    aria-label="Search" aria-describedby="basic-addon2"
+                    name="keyword"
+                    value="{{ request()->get('keyword') }}"
+                    />
+                    <div class="input-group-appened">
+                      <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
             </div>            
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">

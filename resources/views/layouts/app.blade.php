@@ -75,19 +75,6 @@
                                         @csrf
                                     </form>
 
-                                    @auth
-                 @if(auth()->user()->type=='admin')
-                
-                @else
-                                    <a class="dropdown-item" href="/profile">
-                                        {{ __('My Profile') }}
-                                    </a>
-                                    <a class="dropdown-item" href="/jobs-applied">
-                                        {{ __('My Job Application') }}
-                                    </a>
-                @endif
-                @endauth
-
                                 </div>
                             </li>
                         @endguest

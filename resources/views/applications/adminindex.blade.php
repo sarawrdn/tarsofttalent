@@ -79,7 +79,7 @@
 
                       @else
                                 <td class="align-middle text-center text-sm">
-                                  <span class="badge badge-sm bg-gradient-light">{{$jobApplication->status}}</span>
+                                  <span class="badge badge-sm bg-gradient-secondary">{{$jobApplication->status}}</span>
                                 </td>
                                 <td class="text-xs font-weight-bold mb-0 text-center">Remarks</td>
 

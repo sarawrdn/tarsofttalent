@@ -56,19 +56,31 @@
                       <td>
                         <p class="text-xs font-weight-bold mb-0">{{$jobApplication->job->name}}</p>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">{{$jobApplication->status}}</span>
-                      </td>
                       @if ($jobApplication->status == "Viewed")
+                                <td class="align-middle text-center text-sm">
+                                  <span class="badge badge-sm bg-gradient-info">{{$jobApplication->status}}</span>
+                                </td>
                                  <td class="text-xs font-weight-bold mb-0 text-center">{{$jobApplication->interview->interview_date}}
                                     <br>
                                     <a href="{{$jobApplication->interview->link}}" target="_blank">{{$jobApplication->interview->link}}</a>
                                 </td>
                                 
-                                @elseif ($jobApplication->status == "Offered")
+                      @elseif ($jobApplication->status == "Offered" || $jobApplication->status == "Accepted")
+                                <td class="align-middle text-center text-sm">
+                                  <span class="badge badge-sm bg-gradient-success">{{$jobApplication->status}}</span>
+                                </td>
                                 <td class="text-xs font-weight-bold mb-0 text-center"><a href="{{$jobApplication->offerLetter->offer_url}}" target="_blank"><i class="bi bi-file-pdf">Download Offer Letter</i></a></td>
 
-                                @elseif ($jobApplication->status == "Rejected" || "Received")
+                      @elseif ($jobApplication->status == "Rejected")
+                                <td class="align-middle text-center text-sm">
+                                  <span class="badge badge-sm bg-gradient-danger">{{$jobApplication->status}}</span>
+                                </td>
+                                <td class="text-xs font-weight-bold mb-0 text-center">Remarks</td>
+
+                      @else
+                                <td class="align-middle text-center text-sm">
+                                  <span class="badge badge-sm bg-gradient-light">{{$jobApplication->status}}</span>
+                                </td>
                                 <td class="text-xs font-weight-bold mb-0 text-center">Remarks</td>
 
             

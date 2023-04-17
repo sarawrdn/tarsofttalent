@@ -36,11 +36,11 @@ class JobApplicationController extends Controller
                                 ->whereHas('profile.user', function ($query) use ($keyword) {
                                     $query->where('name', 'LIKE', '%' . $keyword . '%');
                                 })
-                                ->paginate(3);
+                                ->paginate(4);
         }
 
     else {
-        $jobApplications = JobApplication::paginate(3);
+        $jobApplications = JobApplication::paginate(4);
     }
 
         return view('applications.adminindex', compact('jobApplications'));

@@ -12,7 +12,7 @@
   
     <style>
         .kbw-signature { width: 200px; height: 200px;}
-        #sig canvas{
+        .sig canvas{
             width: 100% !important;
             height: auto;
         }

@@ -45,12 +45,20 @@
                                     <br>
                                     <a href="{{$jobApplication->interview->link}}" target="_blank">{{$jobApplication->interview->link}}</a>
                                 </td>
-                                
-                      @elseif ($jobApplication->status == "Offered" || $jobApplication->status == "Accepted")
+
+                      @elseif ($jobApplication->status == "Accepted")
                                 <td class="align-middle text-center text-sm">
                                   <span class="badge badge-sm bg-gradient-success">{{$jobApplication->status}}</span>
                                 </td>
-                                <td class="text-xs font-weight-bold mb-0 text-center"><a href="{{$jobApplication->offerLetter->offer_url}}" target="_blank"><i class="bi bi-file-pdf">Download Offer Letter</i></a></td>
+                                <td class="text-xs font-weight-bold mb-0 text-center"><a href="{{$jobApplication->offerLetter->signed_offer_url}}" target="_blank"><i class="bi bi-file-pdf">Download Offer Letter</i></a></td>
+                                
+                      @elseif ($jobApplication->status == "Offered")
+                                <td class="align-middle text-center text-sm">
+                                  <span class="badge badge-sm bg-gradient-success">{{$jobApplication->status}}</span>
+                                </td>
+                                <td class="text-xs font-weight-bold mb-0 text-center"><a href="{{$jobApplication->offerLetter->offer_url}}" target="_blank"><i class="bi bi-file-pdf">Download Offer Letter</i></a>
+                                <br><br>
+                                <a href="{{ route('user.signature', ['jobApplicationId' => $jobApplication->id]) }}"><button>Sign Agreement</button></a></td>
 
                       @elseif ($jobApplication->status == "Rejected")
                                 <td class="align-middle text-center text-sm">

@@ -18,4 +18,9 @@ class OfferLetter extends Model
     {
         return asset('storage/offer-letter/'.$this->file);
     }
+
+    public function getSignedOfferUrlAttribute()
+    {
+        return asset('storage/signed-offer-letter/'.$this->new_file);
+    }
 }

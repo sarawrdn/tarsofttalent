@@ -6,6 +6,7 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\ManageApplicantController;
+use App\Http\Controllers\SignaturePadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +43,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
     Route::get('/jobs/{job}/apply', [JobApplicationController::class, 'apply'])->name('jobs.apply');
     Route::get('/jobs-applied', [JobApplicationController::class, 'index'])->name('jobs.applied');
-
+    Route::get('/signature/{jobApplicationId}', [SignaturePadController::class, 'index'])->name('user.signature');
+    Route::post('/signature/{jobApplicationId}', [SignaturePadController::class, 'upload'])->name('signature.upload');
 
     //PROFILE
     Route::get('/profile', [ProfileController::class, 'create'])->name('user.profile.create');

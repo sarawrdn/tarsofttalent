@@ -1,4 +1,3 @@
-<html>
 <head>
     <title>Laravel Signature Pad Tutorial Example - ItSolutionStuff.com </title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">

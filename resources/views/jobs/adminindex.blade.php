@@ -7,10 +7,30 @@
               <h6 style="text-align:left;float:left;">{{ __('Job List') }}</h6>
               @auth
                     @if(auth()->user()->type=='admin')
-                        <a style="text-align:right;float:right;" href="{{route('admin.jobs.create')}}" class="btn btn-primary"> + Create New Job </a>
+                        <a style="text-align:right;float:right;" href="{{route('admin.jobs.create')}}" class="btn btn-primary"> + New Job </a>
                     @endif
                 @endauth
             </div>
+            
+            <form
+              class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"
+              method="GET"
+              action = "{{ route ('admin.jobs.index')}}"
+              >
+                <div class="input-group">
+                  <input 
+                    class="form-control"
+                    type="text" placeholder="Search for..."
+                    aria-label="Search" aria-describedby="basic-addon2"
+                    name="keyword"
+                    value="{{ request()->get('keyword') }}"
+                    />
+                    <div class="input-group-appened">
+                      <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                  </div>
+              </div>
+            </form>
+
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
@@ -55,6 +75,7 @@
                     @endforeach
                   </tbody>
                 </table>
+                {{ $jobs->links() }}
               </div>
             </div>
           </div>
